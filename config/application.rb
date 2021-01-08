@@ -17,9 +17,9 @@ module Projects
 
     config.generators do |g|
       g.test_framework :rspec,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false
+        view_specs: false, # ビューファイル用のスペックの作成、falseで作成をスキップ
+        helper_specs: false, # ヘルパーファイル用のスペックの作成、falseで作成をスキップ
+        routing_specs: false # routes.rb用のスペック作成、falseで作成をスキップ
     end
   end
 end
