@@ -1,9 +1,13 @@
 FactoryBot.define do
   factory :project do
-    sequence(:name) { |n| "Project #{n}" }
+    sequence(:name) { |n| "Test Project #{n}" }
     description "Sample project for testing purpose."
     due_on 1.week.from_now
     association :owner
+
+    trait :with_notes do
+      after(:create) { |project| create_list(:note, 5, project: project) }
+    end
 
     trait :due_yesterday do
       due_on 1.day.ago
