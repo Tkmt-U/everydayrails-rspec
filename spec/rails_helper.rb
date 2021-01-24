@@ -60,7 +60,7 @@ RSpec.configure do |config|
   # Use Devise helpers in tests
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include RequestSpecHelper, type: :request
-  config.include Devise::Test::IntegrationHelpers, type: :system
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 
   # Add support for Paperclip's Shoulda matchers
   config.include Paperclip::Shoulda::Matchers
