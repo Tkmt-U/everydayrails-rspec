@@ -23,7 +23,7 @@ RSpec.describe Note, type: :model do
 
   # 文字列に一致するメッセージを検索する
   describe "search message for a term" do
-    let(:note1) {
+    let!(:note1) {
       FactoryBot.create(:note,
         project: project,
         user: user,
@@ -31,7 +31,7 @@ RSpec.describe Note, type: :model do
       )
     }
 
-    let(:note2) {
+    let!(:note2) {
       FactoryBot.create(:note,
         project: project,
         user: user,
@@ -39,7 +39,7 @@ RSpec.describe Note, type: :model do
       )
     }
 
-    let(:note3) {
+    let!(:note3) {
       FactoryBot.create(:note,
         project: project,
         user: user,
@@ -59,7 +59,11 @@ RSpec.describe Note, type: :model do
     context "when no match is found" do
       # 空のコレクションを返すこと
       it "returns an empty collection" do
+        # note1
+        # note2
+        # note3
         expect(Note.search("message")).to be_empty
+        expect(Note.count).to eq 3
       end
     end
   end
