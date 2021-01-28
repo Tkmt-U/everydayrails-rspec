@@ -11,7 +11,6 @@ RSpec.feature "Tasks", type: :feature do
   scenario "user toggles a task", js: true do
     sign_in user
     go_to_project "RSpec tutorial"
-    sleep 1
 
     complete_task "Finish RSpec tutorial"
     expect_complete_task "Finish RSpec tutorial"
